@@ -24,8 +24,8 @@
             
             <!-- Título -->
             <div>
-              <h1 class="text-2xl font-bold text-foreground">Dashboard</h1>
-              <p class="text-sm text-muted-foreground">Visão geral do sistema</p>
+              <h1 class="text-2xl font-bold text-foreground">{{ pageTitle }}</h1>
+              <p class="text-sm text-muted-foreground">{{ pageDescription }}</p>
             </div>
           </div>
           
@@ -93,6 +93,34 @@ const unreadNotifications = ref(3) // Valor inicial fictício
 
 // Composables para autenticação
 const { signOut } = useAuth()
+
+// Título dinâmico baseado na rota
+const route = useRoute()
+const pageTitle = computed(() => {
+  switch (route.path) {
+    case '/':
+      return 'Dashboard'
+    case '/clientes':
+      return 'Clientes'
+    case '/ajuste-da-ia':
+      return 'Ajuste da IA'
+    default:
+      return 'Dashboard'
+  }
+})
+
+const pageDescription = computed(() => {
+  switch (route.path) {
+    case '/':
+      return 'Visão geral do sistema'
+    case '/clientes':
+      return 'Gerencie todos os seus clientes'
+    case '/ajuste-da-ia':
+      return 'Configure as configurações de inteligência artificial'
+    default:
+      return 'Visão geral do sistema'
+  }
+})
 
 // Toast
 const toast = ref<any>(null)

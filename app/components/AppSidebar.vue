@@ -46,28 +46,32 @@
 
           <!-- Clientes -->
           <li>
-            <button 
-              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+            <NuxtLink 
+              to="/clientes"
+              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-muted group relative"
+              :class="$route.path === '/clientes' ? 'bg-primary text-primary-foreground' : 'text-foreground/80 hover:text-foreground'"
             >
               <font-awesome-icon 
                 icon="users" 
                 class="w-5 h-5 mr-3" 
               />
               <span>Clientes</span>
-            </button>
+            </NuxtLink>
           </li>
 
           <!-- Analytics -->
           <li>
-            <button 
-              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+            <NuxtLink 
+              to="/ajuste-da-ia"
+              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-muted group relative"
+              :class="$route.path === '/ajuste-da-ia' ? 'bg-primary text-primary-foreground' : 'text-foreground/80 hover:text-foreground'"
             >
               <font-awesome-icon 
                 icon="robot" 
                 class="w-5 h-5 mr-3" 
               />
               <span>Ajuste da IA</span>
-            </button>
+            </NuxtLink>
           </li>
 
           <!-- Relatórios -->
@@ -199,28 +203,34 @@
 
           <!-- Clientes -->
           <li>
-            <button 
-              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+            <NuxtLink 
+              to="/clientes"
+              @click="$emit('close-mobile')"
+              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-muted group relative"
+              :class="$route.path === '/clientes' ? 'bg-primary text-primary-foreground' : 'text-foreground/80 hover:text-foreground'"
             >
               <font-awesome-icon 
                 icon="users" 
                 class="w-5 h-5 mr-3" 
               />
               <span>Clientes</span>
-            </button>
+            </NuxtLink>
           </li>
 
           <!-- Analytics -->
           <li>
-            <button 
-              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted transition-colors"
+            <NuxtLink 
+              to="/ajuste-da-ia"
+              @click="$emit('close-mobile')"
+              class="flex items-center w-full px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:bg-muted group relative"
+              :class="$route.path === '/ajuste-da-ia' ? 'bg-primary text-primary-foreground' : 'text-foreground/80 hover:text-foreground'"
             >
               <font-awesome-icon 
-                icon="chart-bar" 
+                icon="robot" 
                 class="w-5 h-5 mr-3" 
               />
-              <span>Analytics</span>
-            </button>
+              <span>Ajuste da IA</span>
+            </NuxtLink>
           </li>
 
           <!-- Relatórios -->

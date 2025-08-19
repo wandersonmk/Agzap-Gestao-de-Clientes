@@ -110,6 +110,15 @@ async function handleLogin() {
         :valid="!!password"
       />
       
+      <div class="text-right">
+        <NuxtLink 
+          to="/recuperar-senha" 
+          class="text-xs text-foreground/55 hover:text-foreground transition-colors"
+        >
+          Recuperar senha
+        </NuxtLink>
+      </div>
+      
       <AppButton 
         type="submit" 
         block 

@@ -13,11 +13,11 @@ const { isLoading: authLoading } = useAuth()
 onMounted(async () => {
   // Aguarda o auth loading terminar
   while (authLoading.value) {
-    await new Promise(resolve => setTimeout(resolve, 100))
+    await new Promise(resolve => setTimeout(resolve, 50))
   }
   
-  // Adiciona um delay mínimo para mostrar o loading (melhor UX)
-  await new Promise(resolve => setTimeout(resolve, 800))
+  // Delay reduzido para carregamento mais rápido
+  await new Promise(resolve => setTimeout(resolve, 300))
   
   isLoading.value = false
 })
@@ -26,7 +26,11 @@ onMounted(async () => {
 <template>
   <div>
     <!-- Loading enquanto carrega -->
-    <AppLoading v-if="isLoading" />
+    <AppLoading 
+      v-if="isLoading"
+      title="Carregando Dashboard" 
+      description="Preparando visão geral do sistema..."
+    />
     
     <!-- Dashboard quando carregado -->
     <DashboardOverview v-else />
